@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" version="0.8" id="http://www.esport-cms.de/codefy">
+    <name short="Codefy" xml:lang="en">Codefy</name>
+    <description>[BETA] Codefy supports you in developing your websites. Although Opera's build-in webdev tool is powerful, sometimes it's a bit too much. Codefy helps to keep things smart and simplified.</description>
+    <author email="siconize@gmail.com">Chris Konnertz</author>
+    <icon src="icon_64.png"/>
+    <preference name="blacklist" value="example.com,"/>
+</widget>

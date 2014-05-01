@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        window.addEventListener('load', function(){
+            var activated = false;
+            var buttonproperties = {
+                title: 'Codefy',
+                icon: 'icon_64.png',
+                badge: {
+                    display: 'none',
+                    color: '#ff6100',
+                    backgroundColor: 'black'
+                }
+            }
+
+            var button = opera.contexts.toolbar.createItem(buttonproperties); // create button with given properties
+            button.addEventListener('click',  function() {
+                activated = !activated; // turn on/off (=toggle)
+                var tab = opera.extension.tabs.getFocused();
+
+                if (activated == true) {
+                    button.setenabled(true);
+
+                    tab.postMessage('codefy.init'); // use the messaging api to send a message to the injected script
+                } else {
+                    button.setenabled(false);
+
+                    tab.postMessage('codefy.stop'); // use the messaging api to send a message to the injected script
+                }
+            });
+            button.setenabled = function(enabled) {
+                if (enabled == true) {
+                    this.badge.display = 'block';
+                    this.badge.textContent = ' $ ';
+                } else {
+                    this.badge.display = 'none';
+                }
+            }
+            opera.contexts.toolbar.addItem(button); // add button to toolbar
+
+            // onconnet: "invoked when an injected script, popup, or preferences environment is created that enables communication"
+            opera.extension.onconnect = function(event) {
+                if (activated == true) {
+                    event.source.postMessage('codefy.init'); // use the messaging api to send a message to the injected script
+                }
+            }
+
+            opera.extension.tabs.onfocus = function(event) {
+                button.setenabled(false);
+                activated = false;
+                var tab = opera.extension.tabs.getFocused();
+                if (tab) {
+                    tab.postMessage('codefy.tabfocused');
+                }
+            }
+
+            opera.extension.onmessage = function(event) {
+                switch (event.data) {
+                    case 'codefy.running': // codefy is running in focused tab
+                        button.setenabled(true);
+                        activated = true;
+                        break;
+                    case 'codefy.suspended': // suspended (after stop)
+                        button.setenabled(false);
+                        activated = false;
+                        break;
+                }
+            }
+        }, false);
+    </script>
+</head>
+<body>
+</body>
+</html>

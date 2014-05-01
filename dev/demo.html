@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Codefy Demo</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.png" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style type="text/css">
+        body { margin: 0px }
+
+        #codefy * { margin: 0px; padding: 0px; border: none; line-height: normal; text-align: left }
+        #codefy li { background: none }
+        #codefy input { display: inline }
+
+        #codefy { position: fixed; right: 0px; top: 0px; width: 100%; font-family: Verdana !important; font-size: 13px; font-weight: normal; color: silver; cursor: default !important; z-index: 2147483647 /* int32 max */ }
+        #codefy .c-nav { position: absolute; right: 40px; top: 40px; height: 40px; padding: 0px 10px; border: 1px solid white; border-radius: 5px; background-color: #222;
+            box-shadow: 0px 3px 3px 0px silver }
+        #codefy .c-nav .c-button { position: relative; display: inline-block; padding: 0px 10px; line-height: 40px; background: none; color: gray; cursor: pointer }
+        #codefy .c-nav .c-button:hover { color: silver; /* background-color: white; border-top: 1px solid black; height: 50px */ }
+        #codefy .c-subnav { position: absolute; display: none; right: 0px; top: 45px; list-style: none; margin: 0px; padding: 5px 0px; border: 1px solid #DDD; border-radius: 5px; background-color: white; box-shadow: 0px 3px 5px 0px silver; z-index: 99 }
+        #codefy .c-subnav-big li { width: 200px !important }
+        #codefy .c-subnav li { width: 140px; line-height: 14px; padding: 5px 10px; font-family: Verdana !important; color: gray }
+        #codefy .c-subnav li:hover { background-color: #ff6100; color: white }
+        #codefy .c-subnav li.c-spacer { margin-bottom: 10px; border-bottom: 1px solid silver }
+        #codefy .c-subnav li.c-spacer { background-color: transparent }
+        #codefy .c-subnav span.c-checkbox { display: inline-block; width: 11px; height: 9px; line-height: 9px; margin-right: 7px; padding-bottom: 3px; border: 1px solid #DDD; font-weight: bold; text-align: center; vertical-align: 2px }
+        #codefy .c-subnav span.c-checkbox-unchecked { color: transparent }
+        #codefy a { color: silver; text-decoration: none }
+        #codefy .c-notifier { position: absolute; top: 90px; right: 40px; max-width: 80%; cursor: pointer; }
+        #codefy .c-notifier span { display: block; margin: 0px 0px 5px 0px; padding: 2px 5px; border-radius: 5px; background-color: white }
+        #codefy .c-notifier .c-console-log { border: 1px solid silver; }
+        #codefy .c-notifier .c-coordinates { }
+        #codefy .c-surveyor { display: none; position: absolute; padding: 10px; border-radius: 5px; background-color: #222; box-shadow: 0px 3px 5px 0px black; }
+        #codefy .c-surveyor .c-surveyor-title { margin-bottom: 10px; font-size: 12px }
+        #codefy .c-surveyor .c-surveyor-button { display: inline-block; margin: 0px 3px 0px 0px; padding: 3px; border: 1px solid #444; font-size: 10px; cursor: pointer }
+        #codefy .c-surveyor .c-surveyor-button:hover { border: 1px solid #ff6100; }
+        #codefy .c-surveyor .c-surveyor-info { display: none; margin-top: 10px; font-size: 12px }
+        #codefy .c-surveyor .c-surveyor-info span { display: block; margin-top: 5px }
+        #codefy .c-surveyor .c-surveyor-style { display: none; margin-top: 10px; padding: 5px; background-color: #333; border-radius: 5px; font-size: 12px; box-shadow: inset 0px 1px 3px 0px #111; }
+
+        .codefy-show-struct { outline: 1px solid #ff6100 !important }
+        .codefy-show-struct:hover { box-shadow: 0px 0px 3px 2px #ff6100 }
+    </style>
+</head>
+<body>
+    <div id="test" style="width: 300px; height: 100px; background-color: #EEE; cursor: pointer;"></div>
+    <script type="text/javascript">
+        $('#test').click(function() { alert(1); });
+    </script>
+</body>
+</html>

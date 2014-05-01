@@ -1,0 +1,33 @@
+#codefy * { margin: 0px; padding: 0px; border: none; line-height: normal; text-align: left }
+#codefy li { background: none }
+#codefy input { display: inline }
+#codefy a { color: silver; text-decoration: none }
+
+#codefy { position: fixed; right: 0px; top: 0px; width: 100%; /* dont set high! */ font-family: Verdana !important; font-size: 13px; font-weight: normal; color: silver; text-shadow: none; cursor: default !important; z-index: 2147483647 /* int32 max */ }
+#codefy .codefy-nav { position: absolute; right: 40px; top: 40px; height: 40px; padding: 0px 10px; border: 1px solid white; border-radius: 5px; background-color: #222;
+    box-shadow: 0px 3px 3px 0px silver }
+#codefy .codefy-nav .codefy-button { position: relative; display: inline-block; padding: 0px 10px; line-height: 40px; background: none; color: gray; cursor: pointer }
+#codefy .codefy-nav .codefy-button:hover { color: silver; /* background-color: white; border-top: 1px solid black; height: 50px */ }
+#codefy .codefy-subnav { position: absolute; display: none; right: 0px; top: 45px; list-style: none; margin: 0px; padding: 5px 0px; border: 1px solid #DDD; border-radius: 5px; background-color: white; box-shadow: 0px 3px 5px 0px silver; z-index: 99 }
+#codefy .codefy-subnav-big li { width: 200px !important }
+#codefy .codefy-subnav li { width: 140px; line-height: 14px; padding: 5px 10px; font-family: Verdana !important; color: gray }
+#codefy .codefy-subnav li:hover { background-color: #ff6100; color: white }
+#codefy .codefy-subnav li.codefy-spacer { margin-bottom: 10px; border-bottom: 1px solid silver }
+#codefy .codefy-subnav li.codefy-spacer { background-color: transparent }
+#codefy .codefy-subnav span.codefy-checkbox { display: inline-block; width: 11px; height: 9px; line-height: 9px; margin-right: 7px; padding-bottom: 3px; border: 1px solid #DDD; font-weight: bold; text-align: center; vertical-align: 2px }
+#codefy .codefy-subnav span.codefy-checkbox-unchecked { color: transparent }
+#codefy .codefy-notifier { position: absolute; top: 90px; right: 40px; max-width: 80%; cursor: pointer; }
+#codefy .codefy-notifier span { display: block; margin: 0px 0px 5px 0px; padding: 2px 5px; border-radius: 5px; background-color: white }
+#codefy .codefy-notifier .codefy-console-log { border: 1px solid silver; }
+#codefy .codefy-notifier .codefy-coordinates { }
+#codefy .codefy-surveyor { display: none; position: absolute; padding: 10px; border-radius: 5px; background-color: #222; box-shadow: 0px 3px 5px 0px black; }
+#codefy .codefy-surveyor .codefy-surveyor-title { margin-bottom: 10px; font-size: 12px }
+#codefy .codefy-surveyor .codefy-surveyor-button { display: inline-block; margin: 0px 3px 0px 0px; padding: 3px; border: 1px solid #444; font-size: 10px; cursor: pointer }
+#codefy .codefy-surveyor .codefy-surveyor-button:hover { border: 1px solid #ff6100; }
+#codefy .codefy-surveyor .codefy-surveyor-info { display: none; margin-top: 10px; font-size: 12px }
+#codefy .codefy-surveyor .codefy-surveyor-info span { display: block; margin-top: 5px }
+#codefy .codefy-surveyor .codefy-surveyor-style { display: none; margin-top: 10px; padding: 5px; background-color: #333; border-radius: 5px; font-size: 12px; box-shadow: inset 0px 1px 3px 0px #111; }
+#codefy .codefy-msgbox { position: absolute; left: 0px; width: 100%; height: 40px; line-height: 40px; background-color: #222; text-align: center }
+
+.codefy-show-struct { outline: 1px solid #ff6100 !important }
+.codefy-show-struct:hover { box-shadow: 0px 0px 3px 2px #ff6100 }
